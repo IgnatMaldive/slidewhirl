@@ -23,10 +23,9 @@ const Presentation = ({ slides, onReset }: PresentationProps) => {
         width: "100%",
         height: "100%",
         margin: 0,
-        pdf: {
-          format: 'Letter',
-          margin: 0,
-        },
+        embedded: false,
+        pdfSeparateFragments: false,
+        showNotes: false,
       });
       deck.initialize();
 
@@ -37,7 +36,15 @@ const Presentation = ({ slides, onReset }: PresentationProps) => {
   }, [slides]);
 
   const handleDownload = () => {
-    const printWindow = window.open('?print-pdf', '_blank');
+    // Add print stylesheet for PDF export
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'node_modules/reveal.js/css/print/pdf.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+
+    // Open print dialog
+    const printWindow = window.open(window.location.href + '?print-pdf', '_blank');
     if (printWindow) {
       toast({
         title: "Download Started",
