@@ -1,69 +1,87 @@
-# Welcome to your Lovable project
+# Slidewhirl Presentation Generator
 
-## Project info
+![ Logo](https://your-logo-url-here.com/logo.png)
 
-**URL**: https://lovable.dev/projects/92b1384f-9527-46b5-9f63-2cfb10480b0e
+Welcome to the **Slidewhirl Presentation Generator**, an intuitive Vite React app designed to help you create dynamic presentations with Reveal.js. With features like customizable slides, text overlays, and export options, making creating professional presentations a breeze. This app leverages the Wikipedia API for content and Picsum for placeholder images.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+### 🎨 **Customizable Slides**
+- Easily generate stunning presentations with text overlays and background images.
+- Integrated with Reveal.js for smooth transitions and a polished look.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/92b1384f-9527-46b5-9f63-2cfb10480b0e) and start prompting.
+### 🖌️ **Enhanced Styling**
+- Added CSS styles for better visual appeal.
+- Proper positioning and visibility for all text overlays.
 
-Changes made via Lovable will be committed automatically to this repo.
+### 📤 **Export Options**
+- **PDF Export**: Download your entire presentation in a PDF format.
+- **HTML Export**: Save your presentation as an offline HTML file.
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## How It Works
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. **Generate a Presentation**: Input a topic and create a full-screen, styled presentation.
+2. **Export Options**:
+   - Click the **PDF Export** button to download your presentation.
+   - Click the **HTML Export** button to save your presentation in an HTML format.
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Latest Updates
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### **Edit #2**: Fix Presentation Visibility
+- Enhanced the generation process to ensure slides and overlays are displayed correctly.
 
-# Step 3: Install the necessary dependencies.
-npm i
+### **Edit #3**: Add Download Button
+- Introduced a PDF download button for exporting presentations.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+### **Edit #4**: Fixed PDF Export
+- Resolved issues where the PDF only captured the landing page instead of the presentation slides.
 
-**Edit a file directly in GitHub**
+### **Edit #5**: Add PDF and HTML Export Options
+- Improved PDF generation to include full presentation content.
+- Added a new button for exporting presentations as HTML files.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## How to Use
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. **Install Dependencies**: Run `npm install` to install all necessary packages.
+2. **Start the App**: Use `npm start` to launch the app in development mode.
+3. **Generate a Presentation**: Enter a topic and click **Generate**.
+4. **Download Options**:
+   - Click **Download PDF** to open the presentation in `print-pdf` mode for saving.
+   - Click **Download HTML** to save the presentation as a standalone HTML file.
 
-## What technologies are used for this project?
+---
 
-This project is built with .
+## Issues & Fixes
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### **Known Issue: Landing Page in PDF Export**
+- Fixed in the latest update! PDF exports now include the complete presentation.
 
-## How can I deploy this project?
+### **HTML Export**
+- Added functionality for downloading presentations in an HTML format for offline use.
 
-Simply open [Lovable](https://lovable.dev/projects/92b1384f-9527-46b5-9f63-2cfb10480b0e) and click on Share -> Publish.
+---
 
-## I want to use a custom domain - is that possible?
+## Contributing
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+We welcome contributions! If you'd like to improve the Lovable Presentation Generator:
+1. Fork this repository.
+2. Create a new branch (`feature/new-feature`).
+3. Submit a pull request.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+--- 
+
+Happy Presenting! 🎉
