@@ -17,13 +17,20 @@ const Presentation = ({ slides, onReset }: PresentationProps) => {
         hash: false,
         mouseWheel: true,
         transition: "fade",
+        width: "100%",
+        height: "100%",
+        margin: 0,
       });
       deck.initialize();
+
+      return () => {
+        deck.destroy();
+      };
     }
-  }, []);
+  }, [slides]);
 
   return (
-    <div className="relative">
+    <div className="relative w-full h-screen">
       <Button
         onClick={onReset}
         className="absolute top-4 right-4 z-50"
