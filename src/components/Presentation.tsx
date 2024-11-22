@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import Reveal from "reveal.js";
 import "reveal.js/dist/reveal.css";
 import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
+import { useToast } from "@/components/ui/use-toast";
 
 interface PresentationProps {
   slides: Array<{ text: string; imageUrl: string }>;
@@ -10,6 +12,7 @@ interface PresentationProps {
 
 const Presentation = ({ slides, onReset }: PresentationProps) => {
   const deckRef = useRef<HTMLDivElement>(null);
+  const { toast } = useToast();
 
   useEffect(() => {
     if (deckRef.current) {
@@ -20,6 +23,10 @@ const Presentation = ({ slides, onReset }: PresentationProps) => {
         width: "100%",
         height: "100%",
         margin: 0,
+        pdf: {
+          format: 'Letter',
+          margin: 0,
+        },
       });
       deck.initialize();
 
@@ -29,15 +36,36 @@ const Presentation = ({ slides, onReset }: PresentationProps) => {
     }
   }, [slides]);
 
+  const handleDownload = () => {
+    const printWindow = window.open('?print-pdf', '_blank');
+    if (printWindow) {
+      toast({
+        title: "Download Started",
+        description: "Your presentation will open in a new tab. Use your browser's print function to save as PDF.",
+      });
+      printWindow.addEventListener('load', () => {
+        printWindow.print();
+      });
+    } else {
+      toast({
+        title: "Download Failed",
+        description: "Please allow pop-ups and try again",
+        variant: "destructive",
+      });
+    }
+  };
+
   return (
     <div className="relative w-full h-screen">
-      <Button
-        onClick={onReset}
-        className="absolute top-4 right-4 z-50"
-        variant="secondary"
-      >
-        New Presentation
-      </Button>
+      <div className="absolute top-4 right-4 z-50 flex gap-2">
+        <Button onClick={handleDownload} variant="secondary">
+          <Download className="w-4 h-4 mr-2" />
+          Download PDF
+        </Button>
+        <Button onClick={onReset} variant="secondary">
+          New Presentation
+        </Button>
+      </div>
       <div className="reveal" ref={deckRef}>
         <div className="slides">
           {slides.map((slide, index) => (
